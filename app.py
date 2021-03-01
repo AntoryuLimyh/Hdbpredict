@@ -7,7 +7,7 @@ import numpy as np
 import joblib
 model = joblib.load(open('randomforest.pkl', 'rb'))
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
 
 @app.route('/')
 def man():
