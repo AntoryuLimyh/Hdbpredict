@@ -1,0 +1,29 @@
+<html>
+
+<body bgcolor=#a3cfb4>
+
+    <center>
+
+        <h1>  HDB Prediction Value (Approx at) :  </h1>
+    
+    {%if data == 0%}
+    <h1>Iris-setosa 
+    <img src='static\setosa.jpg'>  
+
+    {%else%}
+    <h1>   </h1>
+    <h1>   </h1>
+    
+    <img src="static\hdb.jpg">
+    <h1>$ {{ data[0].round(2) }}</h1>  
+    
+    {%endif%}
+
+        <br><br>
+    <a href='/'>go back to home page</a>
+
+    </center>
+
+</body>
+
+</html>

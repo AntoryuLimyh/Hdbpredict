@@ -1,0 +1,234 @@
+<html>
+    <body bgcolor=#d0efff>
+  
+        <center>
+        <img src="static\rainbow.png">
+        <h1><u> HDB Value Prediction</u> </h1><br>
+        
+        <form method="POST", action="{{url_for('home')}}">
+           <b> floor_area_sqm :  <input type="text", name='a', placeholder="enter numerical value"> <br><br>
+            Lease_Period :  <input type="text", name='b', placeholder="enter 0-99"> <br><br>
+          <sup>(Subtract Lease Commence Date from 2021 - eg 2021 - 1989 = 32(enter this no in the Lease_Period))</sup> <br><br>
+            <br>
+          <u>LRT/MRT Distance - Enter 0(No) or 1(Yes)</u> <br>
+          <p>Check out <a href="https://www.onemap.sg/main/v2/" target="_blank" rel="noopener noreferrer">Onemap!</a>.</p>
+         
+            0 - 300 metres :  <input type="text", name='c', placeholder="enter 0(No) or 1(Yes)",name='c' value="0"> <br><br>
+            300 - 600 metres :  <input type="text", name='d', placeholder="enter 0(No) or 1(Yes)",name='d' value="0"> <br><br>
+            600 - 1000 metres :  <input type="text", name='e', placeholder="enter 0(No) or 1(Yes)",name='e'value="0"> <br><br>
+            Greater than 1000 metres :  <input type="text", name='f', placeholder="enter 0(No) or 1(Yes)",name='f' value="0"> <br><br>
+            <br>
+            <u>Numerical Representation from Reference Table</u> <br><br>
+            storey_range_label :  <input type="text", name='g', placeholder="Enter 0 - 16"> <br><br>
+            town_label :  <input type="text", name='h', placeholder="Enter 0 - 22"> <br><br>
+            flat_type_label :  <input type="text", name='i', placeholder="Enter 0 - 2"> <br><br>
+            flat_model_label: <input type="text", name='j', placeholder="Enter 0 - 10"> <br><br><br></b>
+            <input type="submit" , value='Predict !' >
+        </form>
+
+
+        <h2>Reference Table</h2>
+
+        <style type="text/css">
+            .tg  {border-collapse:collapse;border-spacing:0;}
+            .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+              font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+            .tg .tg-0lax{text-align:left;vertical-align:top}
+            </style>
+            <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0lax">Index</th>
+                <th class="tg-0lax">Storey_range</th>
+                <th class="tg-0lax">town</th>
+                <th class="tg-0lax">flat_type</th>
+                <th class="tg-0lax">flat_model</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tg-0lax">0</td>
+                <td class="tg-0lax">01 TO 03</td>
+                <td class="tg-0lax">ANG MO KIO</td>
+                <td class="tg-0lax">3 ROOM</td>
+                <td class="tg-0lax">DBSS</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">1</td>
+                <td class="tg-0lax">04 TO 06</td>
+                <td class="tg-0lax">BEDOK</td>
+                <td class="tg-0lax">4 ROOM</td>
+                <td class="tg-0lax">Improved</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">2</td>
+                <td class="tg-0lax">07 TO 09</td>
+                <td class="tg-0lax">BISHAN</td>
+                <td class="tg-0lax">5 ROOM</td>
+                <td class="tg-0lax">Improved-Maisonette</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">3</td>
+                <td class="tg-0lax">10 TO 12</td>
+                <td class="tg-0lax">BUKIT BATOK</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">Model A</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">4</td>
+                <td class="tg-0lax">13 TO 15</td>
+                <td class="tg-0lax">BUKIT MERAH</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">Model A-Maisonette</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">5</td>
+                <td class="tg-0lax">16 TO 18</td>
+                <td class="tg-0lax">BUKIT PANJANG</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">Model A2</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">6</td>
+                <td class="tg-0lax">19 TO 21</td>
+                <td class="tg-0lax">BUKIT TIMAH</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">New Generation</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">7</td>
+                <td class="tg-0lax">22 TO 24</td>
+                <td class="tg-0lax">CENTRAL AREA</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">Premium Apartment</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">8</td>
+                <td class="tg-0lax">25 TO 27</td>
+                <td class="tg-0lax">CHOA CHU KANG</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">Premium Apartment Loft</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">9</td>
+                <td class="tg-0lax">28 TO 30</td>
+                <td class="tg-0lax">CLEMENTI</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">Simplified</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">10</td>
+                <td class="tg-0lax">31 TO 33</td>
+                <td class="tg-0lax">GEYLANG</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">Standard</td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">11</td>
+                <td class="tg-0lax">34 TO 36</td>
+                <td class="tg-0lax">HOUGANG</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">12</td>
+                <td class="tg-0lax">37 TO 39</td>
+                <td class="tg-0lax">JURONG EAST</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">13</td>
+                <td class="tg-0lax">40 TO 42</td>
+                <td class="tg-0lax">JURONG WEST</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">14</td>
+                <td class="tg-0lax">43 TO 45</td>
+                <td class="tg-0lax">KALLANG/WHAMPOA</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">15</td>
+                <td class="tg-0lax">46 TO 48</td>
+                <td class="tg-0lax">PASIR RIS</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">16</td>
+                <td class="tg-0lax">46 TO 48</td>
+                <td class="tg-0lax">PUNGGOL</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">17</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">QUEENSTOWN</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">18</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">SEMBAWANG</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">19</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">SENGKANG</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">20</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">SERANGOON</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">21</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">TAMPINES</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">22</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">TOA PAYOH</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">23</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">WOODLANDS</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+              <tr>
+                <td class="tg-0lax">24</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax">YISHUN</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+              </tr>
+            </tbody>
+            </table>
+
+       
+        
+    </center>
+
+    </body>
+</html>
